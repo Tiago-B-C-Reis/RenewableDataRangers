@@ -1,0 +1,13 @@
+
+{
+"DATE_TIME": "string" ,
+"PLANT_ID": "integer",
+"SOURCE_KEY": "string",
+"AMBIENT_TEMPERATURE": "number",
+"DC_POWER":"number",
+"AC_POWER": "number",
+"MODULE_TEMPERATURE": "number",
+"IRRADIATION": "number",
+"DAILY_YIELD": "number",
+"TOTAL_YIELD": "number"
+}
