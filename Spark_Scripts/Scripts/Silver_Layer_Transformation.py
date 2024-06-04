@@ -48,17 +48,6 @@ electricity_data = spark.read.csv(electricity_file_path, header=True, inferSchem
     col("time_period"), col("value"), col("unit_mult"), col("obs_status"), col("conversion_factor"))
 
 
-## Show data
-transaction_data.show(truncate=False)
-transaction_data.printSchema()
-commodity_data.show(truncate=False)
-commodity_data.printSchema()
-electricity_data.show(truncate=False)
-electricity_data.printSchema()
-iso_data.show(truncate=False)
-iso_data.printSchema()
-
-
 # Load environment variables
 load_dotenv()
 # Read environment variables

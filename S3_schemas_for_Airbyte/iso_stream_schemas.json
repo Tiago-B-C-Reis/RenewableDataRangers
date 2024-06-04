@@ -1,0 +1,5 @@
+{
+  "Country or Area": "string",
+  "M49 code": "integer",
+  "ISO-alpha3 code": "string"
+}

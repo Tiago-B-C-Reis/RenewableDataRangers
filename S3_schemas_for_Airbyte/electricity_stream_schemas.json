@@ -10,19 +10,3 @@
   "obs_status": "string",
   "conversion_factor": "float"
 }
-
-{
-  "Country or Area": "string",
-  "M49 code": "integer",
-  "ISO-alpha3 code": "string"
-}
-
-{
-  "code": "string",
-  "transaction": "string"
-}
-
-{
-  "code": "string",
-  "commodity": "string"
-}
