@@ -1,0 +1,28 @@
+{
+  "freq": "string",
+  "ref_area": "string",
+  "commodity": "string",
+  "transaction": "string",
+  "unit_measure": "string",
+  "time_period": "string",
+  "value": "integer",
+  "unit_mult": "integer",
+  "obs_status": "string",
+  "conversion_factor": "float"
+}
+
+{
+  "Country or Area": "string",
+  "M49 code": "integer",
+  "ISO-alpha3 code": "string"
+}
+
+{
+  "code": "string",
+  "transaction": "string"
+}
+
+{
+  "code": "string",
+  "commodity": "string"
+}

@@ -163,4 +163,4 @@ cython_debug/
 .idea/
 
 # Folders
-docker-hadoop-spark-postgresql/
+nonUsed_DockerConfigs/
