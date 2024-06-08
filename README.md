@@ -17,9 +17,9 @@ https://rdatarangers.blogspot.com/
 
 # Hands-on Project: Renewable Data Rangers
 ## Dev Architecture:
-![Dev_Architecture.png](/Readme_images/Dev_Architecture.png)
+![Dev_Architecture.png](/Readme_images/dev_architecture.png)
 ## Prod Architecture:
-![Prod_Architecture.png](/Readme_images/Prod_Architecture.png)
+![Prod_Architecture.png](/Readme_images/prod_architecture.png)
 
 
 # Hadoop Ecosystem docker image:
