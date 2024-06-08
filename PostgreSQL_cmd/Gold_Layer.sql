@@ -10,7 +10,14 @@ CREATE TABLE IF NOT EXISTS gold.commodity (
     commodity VARCHAR(255)
 );
 
--- Step 3: Create the electricity_complete table if it doesn't exist
+-- Step 3: Create the commodity table if it doesn't exist
+CREATE TABLE IF NOT EXISTS gold.countrycodes (
+    m49code INTEGER PRIMARY KEY,
+    countryorarea VARCHAR(255),
+    isoalpha3code VARCHAR(3)
+);
+
+-- Step 4: Create the electricity_complete table if it doesn't exist
 CREATE TABLE IF NOT EXISTS gold.electricity_complete (
     ID SERIAL PRIMARY KEY,
     freq VARCHAR(255),
@@ -26,7 +33,7 @@ CREATE TABLE IF NOT EXISTS gold.electricity_complete (
     obs_status VARCHAR(255)
 );
 
--- Step 4: Create the electricity_per_year table if it doesn't exist
+-- Step 5: Create the electricity_per_year table if it doesn't exist
 CREATE TABLE IF NOT EXISTS gold.electricity_per_year (
     ID SERIAL PRIMARY KEY,
     time_period INTEGER,
@@ -36,7 +43,7 @@ CREATE TABLE IF NOT EXISTS gold.electricity_per_year (
     avg_energy_per_year DOUBLE PRECISION
 );
 
--- Step 5: Create the electricity_per_country table if it doesn't exist
+-- Step 6: Create the electricity_per_country table if it doesn't exist
 CREATE TABLE IF NOT EXISTS gold.electricity_per_country (
     ID SERIAL PRIMARY KEY,
     Country_Codes VARCHAR(255),
@@ -46,7 +53,7 @@ CREATE TABLE IF NOT EXISTS gold.electricity_per_country (
     avg_energy_per_country DOUBLE PRECISION
 );
 
--- Step 6: Create the electricity_per_transaction table if it doesn't exist
+-- Step 7: Create the electricity_per_transaction table if it doesn't exist
 CREATE TABLE IF NOT EXISTS gold.electricity_per_commodity (
     ID SERIAL PRIMARY KEY,
     commodity_name VARCHAR(255),

@@ -50,17 +50,25 @@ def process_json_to_csv(json_file_path, csv_file_path):
 def execute_hadoop_copy_command():
     hadoop_command = [
         'hadoop', 'fs', '-copyFromLocal',
-        '/Users/tiagoreis/PycharmProjects/RenewableDataRangers/Spark_Scripts/Bronze_Layer/.',
+        '/Users/tiagoreis/PycharmProjects/RenewableDataRangers/Scripts_PySpark/Bronze_Layer/.',
         '/user/'
     ]
     run_command(hadoop_command, success_msg="Hadoop copy command executed successfully.",
                 error_msg="Error executing Hadoop copy command")
 
+def check_hdfs_directory_exists(directory):
+    check_command = ['hadoop', 'fs', '-test', '-e', directory]
+    try:
+        subprocess.run(check_command, check=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
 
 def main():
     # Define file paths
     in_local_directory = "/Users/tiagoreis/PycharmProjects/RenewableDataRangers/Docker_Airbyte/tmp_Data/"
-    out_local_directory = "/Users/tiagoreis/PycharmProjects/RenewableDataRangers/Spark_Scripts/Bronze_Layer/"
+    out_local_directory = "/Users/tiagoreis/PycharmProjects/RenewableDataRangers/Scripts_PySpark/Bronze_Layer/"
 
     # Ensure the output directory exists
     os.makedirs(out_local_directory, exist_ok=True)
@@ -89,7 +97,10 @@ def main():
         copy_files_from_docker_to_local()
         rename_file(source_file_path, renamed_file_path)
         process_json_to_csv(renamed_file_path, csv_file_path)
-        execute_hadoop_copy_command()
+        if not check_hdfs_directory_exists('/user/Bronze_Layer'):
+            execute_hadoop_copy_command()
+        else:
+            logger.info("/user/Bronze_Layer already exists in HDFS. Skipping Hadoop copy command.")
     except Exception as e:
         logger.error(f"Script execution failed: {e}")
     else:

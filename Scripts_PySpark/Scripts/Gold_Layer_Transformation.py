@@ -162,6 +162,16 @@ commodity_data_df.write \
     .mode("append") \
     .save() # Mode as append to avoid duplicate data
 
+countrycodes_data_df.write \
+    .format("jdbc") \
+    .option(key="url", value=RDS_PSQL_SERVER) \
+    .option(key="driver", value="org.postgresql.Driver") \
+    .option(key="dbtable", value="gold.countrycodes") \
+    .option(key="user", value=RDS_USER)\
+    .option(key="password", value=RDS_PASS) \
+    .mode("append") \
+    .save() # Mode as append to avoid duplicate data
+
 electricity_data_view.write \
     .format("jdbc") \
     .option(key="url", value=RDS_PSQL_SERVER) \
