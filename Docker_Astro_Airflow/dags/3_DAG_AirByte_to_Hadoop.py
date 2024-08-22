@@ -24,7 +24,7 @@ def run_command(command, success_msg, error_msg):
 
 
 def copy_files_from_docker_to_local():
-    tmp_Data_hook = FSHook(conn_id='tmp_Data')
+    tmp_Data_hook = FSHook('tmp_Data')
     local_directory = tmp_Data_hook.get_path()
 
     # Ensure the local directory exists
@@ -45,7 +45,7 @@ def copy_files_from_docker_to_local():
 
 
 def rename_file():
-    tmp_Data_hook = FSHook(conn_id='tmp_Data')
+    tmp_Data_hook = FSHook('tmp_Data')
     in_local_directory = tmp_Data_hook.get_path()
 
     source_file_path = [
@@ -71,9 +71,9 @@ def rename_file():
 
 
 def process_json_to_csv():
-    tmp_Data_hook = FSHook(conn_id='tmp_Data')
+    tmp_Data_hook = FSHook('tmp_Data')
     in_local_directory = tmp_Data_hook.get_path()
-    bronze_data_hook = FSHook(conn_id='Bronze_Layer')
+    bronze_data_hook = FSHook('Bronze_Layer')
     out_local_directory = bronze_data_hook.get_path()
 
     renamed_file_path = [
@@ -116,7 +116,7 @@ def process_json_to_csv():
 
 
 def execute_hadoop_copy_command():
-    bronze_layer_hook = FSHook(conn_id='Bronze_Layer')
+    bronze_layer_hook = FSHook('Bronze_Layer')
     bronze_layer_directory = bronze_layer_hook.get_path()
 
     hadoop_command = [

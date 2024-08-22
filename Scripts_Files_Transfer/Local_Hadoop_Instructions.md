@@ -6,7 +6,7 @@
 
 ## Create directory:
 ### 2. hadoop fs -mkdir /user
-### 3. hadoop fs -mkdir /user/hive
+### 3. hadoop fs -mkdir /user/Bronze_Layer
 
 ## Remove directory:
 ### 4. hdfs dfs -rm -r /user/Bronze_Layer

@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  scheduler:
+    volumes:
+      - /Users/tiagoreis/PycharmProjects/RenewableDataRangers/Docker_Airbyte/tmp_Data:/usr/local/airflow/tmp_Data:ro
+      - /Users/tiagoreis/PycharmProjects/RenewableDataRangers/Scripts_PySpark/Bronze_Layer:/usr/local/airflow/Bronze_Layer:ro
+      - /Users/tiagoreis/PycharmProjects/RenewableDataRangers/Scripts_PySpark/Scripts:/usr/local/airflow/Scripts:ro
+    networks:
+      - rdatarangers_network
+
+networks:
+  rdatarangers_network:
+    external: true

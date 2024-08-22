@@ -1,4 +1,11 @@
 # Astro Runtime includes the following pre-installed providers packages: https://docs.astronomer.io/astro/runtime-image-architecture#provider-packages
 apache-airflow-providers-apache-spark==4.8.0
+
+# apache-airflow-providers-jdbc==4.3.1
+# https://airflow.apache.org/docs/apache-airflow-providers-jdbc/stable/index.html
+# https://www.youtube.com/results?search_query=airflow+providers+hdfs
+# https://www.cdata.com/kb/tech/hdfs-jdbc-apache-airflow.rst
+
 # apache-airflow-providers-apache-hdfs==4.4.1
+# https://www.cdata.com/kb/tech/hdfs-jdbc-apache-airflow.rst
 # hdfs[avro,dataframe,kerberos]>=2.0.4
